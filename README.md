@@ -37,6 +37,7 @@ DreadDebbuger.asm ~
 Features:
   - ability to debug 16-bit, 32-bit and 64-bit applications
   - will have all opcodes, registers and Flags such as EFLAGS, RFALGS, IP, EIP, and RIP
+  - ability to debug .dll files, .exe files and .sys files
  DreadDebuggerInst.asm ~
  -------------------------
  Features:
