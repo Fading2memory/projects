@@ -16,3 +16,31 @@ Dreadmistfall includes ~
 
  3.) Shrinker & Xpander.inc --- The shrinker acts as a compression engine, and the xpander (aka expander) is only called to either make 
   the code size either bigger or smaller on each generation (meaning, on each new infection, the virus size is either bigger or smaller).
+
+
+Morhp32 Assembler ~
+------------------------
+
+Morph32 Assembler, DreadDebugger.asm, and DreadDebuggerInst.asm
+-----------------------------------------------------------------------
+Features: 
+ - masm's and tasm's syntax, cpu directives!
+ - cpu directives include: .386/.386p through .686/.686p and p386-p686
+ - customized macros are allowed
+ -  is writable in the .data section, do not need to active
+the write flag
+ - written in pure assembly.
+ - will be a complete IDE assembler that is able to work within the command line, like NASM
+
+DreadDebbuger.asm ~
+-----------------------
+Features:
+  - ability to debug 16-bit, 32-bit and 64-bit applications
+  - will have all opcodes, registers and Flags such as EFLAGS, RFALGS, IP, EIP, and RIP
+ DreadDebuggerInst.asm ~
+ -------------------------
+ Features:
+  - have different color schemes for the background, text, and border colours.
+
+
+As you can tell, I am just an amatuer, just trying to imrpove my skills as a programmer in assembly and other languages!
