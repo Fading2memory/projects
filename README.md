@@ -18,11 +18,11 @@ Dreadmistfall includes ~
   the code size either bigger or smaller on each generation (meaning, on each new infection, the virus size is either bigger or smaller).
 
 
-Morhp32 Assembler ~
-------------------------
-
 Morph32 Assembler, DreadDebugger.asm, and DreadDebuggerInst.asm
 -----------------------------------------------------------------------
+
+Morhp32 Assembler ~
+------------------------
 Features: 
  - masm's and tasm's syntax, cpu directives!
  - cpu directives include: .386/.386p through .686/.686p and p386-p686
