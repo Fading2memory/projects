@@ -3,6 +3,7 @@ Eductional Purposes only!
 
 Not the full source material for dreadmistfall, aka dreadmist.
 But proof that I can program metamorphic code.
+Infect.inc and Permut.inc are not included, sorry. 
 
 
 Dreadmistfall includes ~
