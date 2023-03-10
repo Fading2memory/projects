@@ -17,7 +17,6 @@ Dreadmistfall includes ~
  3.) Shrinker & Xpander.inc --- The shrinker acts as a compression engine, and the xpander (aka expander) is only called to either make 
   the code size either bigger or smaller on each generation (meaning, on each new infection, the virus size is either bigger or smaller).
 
-
 Morph32 Assembler, DreadDebugger.asm, and DreadDebuggerInst.asm
 -----------------------------------------------------------------------
 
