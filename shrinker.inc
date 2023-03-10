@@ -64,7 +64,7 @@
 ; PUSH and POP also can be expanded, and so on) you can't know what's garbage
 ; and what's not until you have compressed everything.
 ;
-; The pairs of instructions that MetaPHOR can compress are:
+; The pairs of instructions that DreadMist can compress are:
 ;
 ;   PUSH Imm / POP Reg                      --> MOV Reg,Imm
 ;   PUSH Imm / POP Mem                      --> MOV Mem,Imm
