@@ -30,7 +30,8 @@ Features:
  -  is writable in the .data section, do not need to active
 the write flag
  - written in pure assembly.
- - will be a complete IDE assembler that is able to work within the command line, like NASM
+future updates: 
+ - will be a complete IDE assembler that is able to work within the command line, like td32
 
 DreadDebbuger.asm ~
 -----------------------
@@ -43,6 +44,14 @@ Features:
  -------------------------
  Features:
   - have different color schemes for the background, text, and border colours.
+
+Mlink32.asm ~
+-----------------------
+Features:
+  - Compiles .obj to .exe, and also links libs to import to the exe file 
+  - Updated version from tlink32.exe (borland product)
+  - Changed "MZP" which is Borland signature to signify 32-bit application, and changed "This program must run under Win32"
+    to "This program cannot be run in DOS mode", and added in the "Rich" section. 
 
 
 As you can tell, I am just an amatuer, just trying to imrpove my skills as a programmer in assembly and other languages!
